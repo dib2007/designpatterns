@@ -8,7 +8,11 @@ public class CSVParser implements Parser {
 	
 	@Override
 	public void parse(Document doc) {
-		
+		if(doc instanceof CSVDocument) {
+			System.out.println("Parsing " + doc.getType() + " ....");
+			return;
+		}
+		throw new IllegalArgumentException("Type of the document is illegal");
 	}
 
 }

@@ -11,5 +11,6 @@ public abstract class DocumentManager {
 		parser.parse(doc);
 	}
 
+	// This is the Factory method
 	protected abstract Parser createParser();
 }

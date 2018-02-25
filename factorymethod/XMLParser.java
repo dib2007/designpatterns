@@ -8,8 +8,11 @@ public class XMLParser implements Parser {
 	
 	@Override
 	public void parse(Document doc) {
-		// TODO Auto-generated method stub
-
+		if(doc instanceof XMLDocument) {
+			System.out.println("Parsing " + doc.getType() + " ....");
+			return;
+		}
+		throw new IllegalArgumentException("Type of the document is illegal");
 	}
 
 }
