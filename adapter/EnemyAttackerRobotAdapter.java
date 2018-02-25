@@ -10,13 +10,11 @@ public class EnemyAttackerRobotAdapter implements EnemyAttacker {
 
 	@Override
 	public void driveForward() {
-		// TODO Auto-generated method stub
 		robot.walkForward();
 	}
 
 	@Override
 	public void fireWeapon() {
-		// TODO Auto-generated method stub
 		robot.smashWithHands();
 	}
 
