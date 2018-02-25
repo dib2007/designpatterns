@@ -1,5 +1,6 @@
 package adapter;
 
+
 public class EnemyAttackerRobot {
 
 	
