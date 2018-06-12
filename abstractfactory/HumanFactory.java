@@ -1,14 +1,18 @@
 package abstractfactory;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class HumanFactory {
 
-	public static Human getInstance(final int type) {
-		if(type==0) {
-			return new Male();
-		}
-		if(type==1) {
-			return new Female();
-		}
-		throw new UnsupportedOperationException("Wrong selection");
+	static Map<String, Class<? extends Human>> map = new HashMap<>();
+
+	static {
+		map.put("MALE", Male.class);
+		map.put("FEMALE", Female.class);
+	}
+
+	public static Human getInstance(String type) throws InstantiationException, IllegalAccessException {
+		return map.get(type).newInstance();
 	}
 }

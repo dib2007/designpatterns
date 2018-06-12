@@ -3,7 +3,13 @@ package abstractfactory;
 public class FactoryTest {
 
 	public static void main(String[] args) {
-		HumanFactory.getInstance(0);
-		HumanFactory.getInstance(1);
+		try {
+			HumanFactory.getInstance("MALE");
+			HumanFactory.getInstance("FEMALE");
+		} catch (InstantiationException e) {
+			e.printStackTrace();
+		} catch (IllegalAccessException e) {
+			e.printStackTrace();
+		}
 	}
 }
